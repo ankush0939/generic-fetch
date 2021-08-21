@@ -33,9 +33,7 @@ const Resource = ({ path, render }) => {
   }, []);
 
   return (
-    <div>
-      <p>in Resource</p>
-
+    <div className='showlist'>
       {render(state)}
     </div>
   );

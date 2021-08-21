@@ -8,14 +8,20 @@ const ShowCat = () => {
 
     const render = ( data ) => {
         
-        if ( data.loading === true ) return null;
+        if ( data.loading === true ) return <p>loading ...</p>;
         console.log('Got the data' + data);
+
+        return (
+            data.trans.map( cat => (
+                <div key={cat.id} >
+                    <img className='image' src={ cat.url } alt='cat image' />
+                </div>
+            ))
+        )
     }
 
     return (
         <div>
-            <h1>in Show Cat</h1>
-
             <Resource path={ webURL } render={ render }/>
         </div>
     )
